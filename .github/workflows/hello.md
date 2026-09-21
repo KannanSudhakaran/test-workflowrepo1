@@ -1,9 +1,13 @@
 ---
 on:
+  schedule: daily
   workflow_dispatch:
 permissions:
   contents: read
 engine: copilot
+tools:
+  github:
+    toolsets: [repos]
 safe-outputs:
   create-issue:
     title-prefix: "[hello] "
@@ -12,5 +16,5 @@ safe-outputs:
 
 # Hello World
 
-Write a friendly one-paragraph greeting to this repository's contributors.
-Create an issue containing the greeting.
+Look at the most recent 5 commits in this repository.
+Write a short, friendly summary of what changed and create an issue with it
